@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="container">
+        <div class="section1">
+
+            <h1>Kidz submitted</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kid</th>
+                        <th>Asset</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for kid in kidz %}
+                    <tr>
+                        <td>{{ kid.kidasset }}</td>
+                        <td>{{ kid.back }}</td>
+                        <td>{{ kid.straps }}</td>
+                        <td>{{ kid.eyes }}</td>
+                        <td>{{ kid.mouth }}</td>
+                        <td>{{ kid.nose }}</td>
+                        <td>{{ kid.facedecoration }}</td>
+                        <td>{{ kid.facetrait1 }}</td>
+                        <td>{{ kid.facetrait2 }}</td>
+                        <td>{{ kid.hair }}</td>
+                        <td>
+                            <form action="/deregister" method="post">
+                                <input name="id" type="hidden" value="{{ kid.id }}">
+                                <input type="submit" value="Deregister">
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

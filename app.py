@@ -165,3 +165,7 @@ def register():
 def registrants():
     kidz = db.execute("SELECT * FROM kidz")
     return render_template("registrants.html", kidz=kidz)
+
+
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=5000)

@@ -1,0 +1,242 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(0, 0, 0);
+    margin-bottom: 50px;
+}
+
+body {
+    background-color: gainsboro;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+}
+
+.section1 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.kid-display {
+    width: 80%;
+    display: flex;
+    max-width: 800px;
+    justify-content: center;
+}
+
+.kid-frame {
+    padding: 10px;
+    display: inline-block;
+    width: 80%;
+}
+
+.kidholder {
+    width: 100%;
+    height: 100%;
+    background-image: url('./kidholder/b.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.layerasset {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+#layerme {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+#layerme1 {
+    background-image: url('./kidholder/b.png');
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+#layerme2 {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+#layerme3 {
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+}
+#layerme4 {
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+}
+#layerme5 {
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+}
+#layerme6 {
+    z-index: 6;
+    width: 100%;
+    height: 100%;
+}
+#layerme7 {
+    z-index: 7;
+    width: 100%;
+    height: 100%;
+}
+#layerme8 {
+    z-index: 8;
+    width: 100%;
+    height: 100%;
+}
+#layerme9 {
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+}
+#layerme10 {
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+.section2 {
+    padding-top: 25px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    /* align-items: center; */
+    justify-content: center;
+}
+.singleasset {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+}
+.singlelabel {
+    background-image: url('./kidholder/b.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+}
+
+/* LABEL WITH NO BG KID */
+.item {
+    width: 200px;
+    height: 200px;
+}
+
+.singleasset:hover {
+    color: blueviolet;
+    border-style: solid;
+    border: rgb(231, 154, 0);
+    border-width: 3px;
+    opacity: 0.5;
+}
+.singlelabel:hover {
+    color: blueviolet;
+    border-style: solid;
+    border: rgb(231, 154, 0);
+    border-width: 3px;
+    opacity: 0.5;
+}
+
+.submission {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.submitBtn {
+    width: 6rem;
+    margin: 5px;
+    padding: 5px 5px 5px 5px;
+    background-color: #ffb108;
+    font-size: 1rem;
+    color: #000000;
+    border: #c39602;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 7px;
+}
+
+.submitBtn:hover {
+    width: 6rem;
+    margin: 5px;
+    padding: 5px 5px 5px 5px;
+    background-color: #ffc547;
+    font-size: 1rem;
+    color: #000000;
+    border: #ffd23e;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 7px;
+    box-shadow: 0 4px 5px 0 rgb(0 0 0 / 20%);
+}
+
+
+/* EXTERNAL CSS */
+/* Hide all steps by default: */
+.tab {
+    display: none;
+  }
+  
+  /* Make circles that indicate the steps of the form: */
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  /* Mark the active step: */
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: #04AA6D;
+  }
+
+
+  /* RADIO STYLE */
+/* label:hover {
+    opacity: .5;
+    border: rgb(238, 171, 0);
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 25px;
+  } */
+
+input:checked + label { 
+    border: rgb(238, 171, 0);
+    opacity: .3;
+ }
