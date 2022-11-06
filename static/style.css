@@ -196,6 +196,32 @@ body {
     border-radius: 7px;
     box-shadow: 0 4px 5px 0 rgb(0 0 0 / 20%);
 }
+.dwnBtn {
+    width: 6rem;
+    margin: 5px;
+    padding: 5px 5px 5px 5px;
+    background-color: #ffb108;
+    font-size: 1rem;
+    color: #000000;
+    border: #c39602;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 7px;
+}
+
+.dwnBtn:hover {
+    width: 6rem;
+    margin: 5px;
+    padding: 5px 5px 5px 5px;
+    background-color: #ffc547;
+    font-size: 1rem;
+    color: #000000;
+    border: #ffd23e;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 7px;
+    box-shadow: 0 4px 5px 0 rgb(0 0 0 / 20%);
+}
 
 
 /* EXTERNAL CSS */
