@@ -1,160 +1,65 @@
-{% extends "layout.html" %}
-
-{% block body %}
-    <div class="container">
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         
-        <div class="section1">
-            <h1>Select assets for current Kid</h1>
-            <div class="kid-display">
-                <div class="kid-frame">
-                    <img src="static/kidz/{{ kid }}" width="100%">
-                </div>
-                <div class="kid-frame">
-                    <div class="kidholder">
-                        <div id="layerme" style="background-size: contain;" width="200px" height="200px">
-                            <div id="layerme1" style="background-size: contain;" width="200px" height="200px">
-                                <div id="layerme2" style="background-size: contain;" width="200px" height="200px">
-                                    <div id="layerme3" style="background-size: contain;" width="200px" height="200px">
-                                        <div id="layerme4" style="background-size: contain;" width="200px" height="200px">
-                                            <div id="layerme5" style="background-size: contain;" width="200px" height="200px">
-                                                <div id="layerme6" style="background-size: contain;" width="200px" height="200px">
-                                                    <div id="layerme7" style="background-size: contain;" width="200px" height="200px">
-                                                        <div id="layerme8" style="background-size: contain;" width="200px" height="200px">
-                                                            <div id="layerme9" style="background-size: contain;" width="200px" height="200px">
-                                                                <div id="layerme10" style="background-image: url('static/kidholder/frame.png'); background-size: contain;" width="200px" height="200px">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <img src="static/Assets/eyes/Blinking Eyes 00000.png" width="100%" class="layerasset"> -->
-                    </div>
-                </div>
-                
+        <link href="./static/styles.css" rel="stylesheet">
+        <title>Kid tester</title>
+
+
+    </head>
+    <body>
+        <!-- hello, homepage -->
+
+        <header>
+          <!-- <div class="navbar bg-dark" id="navbarHeader">
+          </div> -->
+          <div class="navbar navbar-dark bg-dark shadow-sm justify-content-center" id="navbarHeader" >
+            <div class="container justify-content-center">
+              <a href="#" class="navbar-brand d-flex align-items-center">
+                <img src="static/images/fort-gotten-new-logo-white.png" width="100" height="45" fill="none" class="me-2" viewBox="0 0 24 24" fill="#AB7C94">
+                <strong>Generator</strong>
+              </a>
             </div>
-        </div>
-
-        <div class="section2">
-
-            <form action="/register" method="post">
-
-                <div class="submission">
-                    <input type="submit" value="Submit" class="submitBtn">
-                    <br>
-                    <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="submitBtn">Previous</button>
-                    <button type="button" id="nextBtn" onclick="nextPrev(1)" class="submitBtn">Next</button>
-                </div>
-
-                <!-- <input autocomplete="off" autofocus name="name" placeholder="Name" type="text"> -->
-                <div class="tab" className="tab">
-                    {% for back in backpacks %}
-                        <div class="singleasset">
-                            <input oninput="nextPrev(1)" id="{{ back }}" name="back" type="radio" value="{{ back }}"> {{ back }}
-                            <label for="{{ back }}" onmouseover="exampleback('{{ back }}')" height="150px"><img src="static/Assets/back/{{back}}" class="item">
-                            </label>
-                        </div>
-                    {% endfor %}
-                </div>
-
-                <div class="tab" className="tab">
-                    {% for strap in straps %}
-                        <div class="singleasset">
-                            <input oninput="nextPrev(1)" id="{{ strap }}" name="strap" type="radio" value="{{ strap }}"> {{ strap }}
-                            <label for="{{ strap }}" onmouseover="examplestrap('{{ strap }}')"><img src="static/Assets/straps/{{strap}}" class="singlelabel">
-                            </label>
-                        </div>
-                    {% endfor %}
-                    
-                </div>
-
-                <div class="tab" className="tab">
-                    {% for eye in eyes %}
-                        <div class="singleasset">
-                            <input oninput="nextPrev(1)" id="{{ eye }}" name="eye" type="radio" value="{{ eye }}"> {{ eye }}
-                            <label for="{{ eye }}" onmouseover="exampleeye('{{ eye }}')"><img src="static/Assets/eyes/{{eye}}" class="singlelabel">
-                            </label>
-                        </div>
-                    {% endfor %}
-                    
-                </div>
-
-                <div class="tab" className="tab">
-                    {% for mouth in mouths %}
-                        <div class="singleasset">
-                            <input oninput="nextPrev(1)" id="{{ mouth }}" name="mouth" type="radio" value="{{ mouth }}"> {{ mouth }}
-                            <label for="{{ mouth }}" onmouseover="examplemouth('{{ mouth }}')"><img src="static/Assets/mouth/{{mouth}}" class="singlelabel">
-                            </label>
-                        </div>
-                    {% endfor %}
-                    
-                </div>
-
-                <div class="tab" className="tab">
-                    {% for nose in noses %}
-                        <div class="singleasset">
-                            <input oninput="nextPrev(1)" id="{{ nose }}" name="nose" type="radio" value="{{ nose }}"> {{ nose }}
-                            <label for="{{ nose }}" onmouseover="examplenose('{{ nose }}')"><img src="static/Assets/nose/{{nose}}" class="singlelabel">
-                            </label>
-                        </div>
-                    {% endfor %}
-                    
-                </div>
-
-                <div class="tab" className="tab">
-                    {% for facedeco in facedecos %}
-                        <div class="singleasset">
-                            <input oninput="nextPrev(1)" id="{{ facedeco }}" name="facedeco" type="radio" value="{{ facedeco }}"> {{ facedeco }}
-                            <label for="{{ facedeco }}" onmouseover="examplefacedeco('{{ facedeco }}')"><img src="static/Assets/facedecoration/{{facedeco}}" class="singlelabel">
-                            </label>
-                        </div>
-                    {% endfor %}
-                    
-                </div>
-
-                <div class="tab" className="tab">
-                    {% for face1 in faces1 %}
-                        <div class="singleasset">
-                            <input oninput="nextPrev(1)" id="{{ face1 }}" name="face1" type="radio" value="{{ face1 }}"> {{ face1 }}
-                            <label for="{{ face1 }}" onmouseover="exampleface1('{{ face1 }}')"><img src="static/Assets/facetrait1/{{face1}}" class="singlelabel">
-                            </label>
-                        </div>
-                    {% endfor %}
-                    
-                </div>
-
-                <div class="tab" className="tab">
-                    {% for face2 in faces2 %}
-                        <div class="singleasset">
-                            <input oninput="nextPrev(1)" id="{{ face2 }}" name="face2" type="radio" value="{{ face2 }}"> {{ face2 }}
-                            <label for="{{ face2 }}" onmouseover="exampleface2('{{ face2 }}')"><img src="static/Assets/facetrait2/{{face2}}" class="singlelabel">
-                            </label>
-                        </div>
-                    {% endfor %}
-                    
-                </div>
-
-                <div class="tab" className="tab">
-                    {% for hair in hairs %}
-                        <div class="singleasset">
-                            <input id="{{ hair }}" name="hair" type="radio" value="{{ hair }}" style="display: none;"> 
-                            <label for="{{ hair }}" onclick="examplehair('{{ hair }}')"><img src="static/Assets/hair/{{hair}}" class="singlelabel">
-                            </label>
-                        </div>
-                    {% endfor %}
-                    
-                </div>
+          </div>
+        </header>
 
 
+        <!-- main -->
 
-            </form>
+        <h1>
 
-        </div>
+        </h1>
+            
+        <section class="py-5 text-center container">
+            <div class="row py-lg-2">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Select a folder containing all the assets.</h1>
+                <p class="lead text-muted">Please keep folder structure</p>
+                <p>
+                <!-- <a href="#" class="btn btn-secondary my-2">Change seed</a> -->
+                </p>
+                <form action = "/generate" method = "POST" 
+                enctype = "multipart/form-data">
+                <input type = "file" name = "file" webkitdirectory multiple/>
+                <input type = "submit" class="btn btn-primary my-2"/>
+                </form>
+            </div>
+            </div>
+        </section>
 
-    </div>
-{% endblock %}
+
+        
+            <script type="text/javascript">
+                document.getElementById("file").addEventListener("change", (event) => {
+                let output = document.getElementById("listing");
+                for (const file of event.target.files) {
+                    let item = document.createElement("li");
+                    item.textContent = file.webkitRelativePath;
+                    output.appendChild(item);
+                };
+                }, false);
+            </script>
+    </body>
+</html>

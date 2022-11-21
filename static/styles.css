@@ -1,0 +1,33 @@
+.container {
+    text-align: center;
+}
+
+.kid {
+    width: 250px;
+    height: 250px;
+
+
+}
+
+.kidcontainer {
+    display: inline-block;
+    top: 0;
+    left: 0;
+    position: relative;
+    width: 250px;
+    height: 250px;
+}
+
+.stack {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+/*
+<img id="kbackground" src="images/tempimages/c.png">
+<img id="kbody" src="images/tempimages/b.png">
+<img id="keyes" src="images/tempimages/d.png">
+<img id="knose" src="images/tempimages/f.png">
+<img id="kmouth" src="images/tempimages/e.png">
+<img id="kclothes" src="images/tempimages/a.png">
+<img class="kframe" src="images/frame/frame.png"> */
