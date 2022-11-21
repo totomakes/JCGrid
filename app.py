@@ -21,13 +21,15 @@ def getDir(someDir):
     return templist
 
 # Get asset directory list
-a = os.listdir("./static/assets/")
-assetfolders = []
-for x in a:
-    if x != ".DS_Store":
-        assetfolders.append(x)  
-assetfolders.sort()
-# print(assetfolders)
+def getdirectories():
+    a = os.listdir("./static/assets/")
+    assetfolders = []
+    for x in a:
+        if x != ".DS_Store":
+            assetfolders.append(x)  
+    assetfolders.sort()
+    # print(assetfolders)
+    return assetfolders
 
 
 # 
@@ -79,12 +81,10 @@ def upload_file1():
             if not filename.endswith('DS_Store'):
                 file.save("./static/assets/"+assetcategory+"/"+assetname)
         
+        # DEFINE asset folders
+        assetfolders = getdirectories() 
 
-        # a = getDir("./static/assets/"+assetfolders[0]+"/")
-        list1 = []
-        for x in a:
-            list1.append(str(x).split("/")[-1])
-        print(list1)
+
         
         
               
@@ -93,6 +93,7 @@ def upload_file1():
         # Get a random asset function
         def get_asset(number):
             return(random.choice(getDir("./static/assets/"+assetfolders[number]+"/")))
+            print("GOT ASSETS")
         
         # check duplicates variable
         kidz = []
@@ -121,7 +122,7 @@ def upload_file1():
 
 
         
-        return render_template("generate.html", list1=list1, kidz=kidz, amountoflayers=amountoflayers)
+        return render_template("generate.html", kidz=kidz, amountoflayers=amountoflayers)
 
 
 
