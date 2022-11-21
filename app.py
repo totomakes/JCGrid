@@ -80,11 +80,6 @@ def upload_file1():
                 file.save("./static/assets/"+assetcategory+"/"+assetname)
         
 
-        print("FIRST FOLDER")
-        print(assetfolders[0])
-        print(assetfolders[1])
-        print(assetfolders[2])
-        print()
         # a = getDir("./static/assets/"+assetfolders[0]+"/")
         list1 = []
         for x in a:
