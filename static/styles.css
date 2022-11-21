@@ -23,6 +23,11 @@
     left: 0;
     position: absolute;
 }
+
+
+.yellow {
+    background-color: rgb(255, 162, 0);
+}
 /*
 <img id="kbackground" src="images/tempimages/c.png">
 <img id="kbody" src="images/tempimages/b.png">

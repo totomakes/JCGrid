@@ -32,6 +32,8 @@ def getdirectories():
     return assetfolders
 
 
+global assetfolders
+assetfolders = getdirectories() 
 # 
 
 
@@ -82,6 +84,7 @@ def upload_file1():
                 file.save("./static/assets/"+assetcategory+"/"+assetname)
         
         # DEFINE asset folders
+        global assetfolders
         assetfolders = getdirectories() 
 
 
@@ -96,6 +99,7 @@ def upload_file1():
             print("GOT ASSETS")
         
         # check duplicates variable
+        global kidz
         kidz = []
 
         # For every cat -> create an assembled cat array
@@ -118,11 +122,40 @@ def upload_file1():
         print(len(kidz[0]))
         
 
-        
-
-
-        
         return render_template("generate.html", kidz=kidz, amountoflayers=amountoflayers)
+
+@app.route('/generate2', methods = ['GET', 'POST'])
+def randomizekidz():
+    # GENERATE KIDZ
+    amountofkidz = 15
+    # Get a random asset function
+    def get_asset(number):
+        return(random.choice(getDir("./static/assets/"+assetfolders[number]+"/")))
+        print("GOT ASSETS")
+    
+    # check duplicates variable
+    kidz = []
+
+    # For every cat -> create an assembled cat array
+    for n in range(amountofkidz):
+        if len(kidz) == amountofkidz:
+            break
+        else:
+            assembledkid = []
+            # pick an asset from everyfolder.
+            
+            for m in range(len(assetfolders)):
+                assembledkid.append(get_asset(m))
+            # print(assembledburukat)
+
+            if assembledkid not in kidz:
+                kidz.append(assembledkid)
+    
+    amountoflayers = len(kidz[0])
+    
+    print(len(kidz[0]))
+    return render_template("generate2.html", kidz=kidz, amountoflayers=amountoflayers)
+        
 
 
 
