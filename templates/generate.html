@@ -18,8 +18,8 @@
           <div class="navbar navbar-dark bg-dark shadow-sm justify-content-center" id="navbarHeader" >
             <div class="container justify-content-center">
               <a href="/" class="navbar-brand d-flex align-items-center">
-                <img src="static/images/fort-gotten-new-logo-white.png" width="100" height="45" fill="none" class="me-2" viewBox="0 0 24 24" fill="#AB7C94">
-                <strong>Generator</strong>
+                <img src="static/images/LARKHAUS_Final_LogoMarks_Primary_Wordmark_White.png" height="45" fill="none" class="me-2" viewBox="0 0 24 24" fill="#AB7C94">
+
               </a>
             </div>
           </div>
@@ -27,42 +27,32 @@
 
         <main>
 
-            <section class="py-5 text-center container">
+            <section class="py-4 text-center container">
                 <div class="row py-lg-2">
                 <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light">Fort Gotten Kid Generator</h1>
-                    <p class="lead text-muted">Check remastered assets</p>
-                    <p>
-                    <a href="/generate2" class="btn btn-primary my-2" onclick="window.location.reload();">Generate</a>
-                    <!-- <a href="#" class="btn btn-secondary my-2">Change seed</a> -->
-                    </p>
+                    <h1 class="fw-light">Grid Generator</h1>
+                    <h4 class="fw-light">v.0.1</h4>
+                    <a href="/download" class="btn btn-primary my-2">Download</a>
+                    
                 </div>
                 </div>
             </section>
-
-            <div class="section2 py-5 text-center container">
-                <div class="row py-lg-2">
-                    <div class="col-lg-12 col-md-8 mx-auto">
-                        {% for kid in kidz %}
-                        <div class="kidcontainer">
-                            {% for n in range(amountoflayers) %}
-                            
-                                <img class="stack" style="z-index: {{ n }};" src="{{ kid[n] }}" width="250px">
-                            {% endfor %}
-                        </div>
-                        {% endfor %}
-                    </div>
+            
+            <div class="section2 text-center container">
+              <div class="row py-lg-2">
+                <div class="mx-auto">
+                  <div class="kidcontainer">
+                    <img src="{{ grid }}"; width="80%">
+                  </div>
                 </div>
-                
+              </div>
             </div>
-
-
-
+                
         </main>
 
         <footer class="text-muted py-5">
           <div class="container">
-            <p class="mb-0 align-items-center" style="text-align: center" >App for proofing remastered kidz.</p>
+            <p class="mb-0 align-items-center" style="text-align: center" >App in development for JC</p>
           </div>
         </footer>
 
